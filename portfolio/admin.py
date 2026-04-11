@@ -15,3 +15,14 @@ class UnidadeCurricularAdmin(admin.ModelAdmin):
     list_filter = ('ano', 'licenciaturas')
     search_fields = ('nome',)
     filter_horizontal = ('licenciaturas',)
+
+from .models import Tecnologia, Projeto
+
+@admin.register(Tecnologia)
+class TecnologiaAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'nivel_interesse')
+
+@admin.register(Projeto)
+class ProjetoAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'uc')
+    filter_horizontal = ('tecnologias',) 
