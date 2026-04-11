@@ -40,12 +40,11 @@ class Tecnologia(models.Model):
 class Projeto(models.Model):
     titulo = models.CharField(max_length=100)
     descricao = models.TextField()
-    conceitos_aplicados = models.TextField()
-    tecnologias = models.ManyToManyField(Tecnologia, related_name='projetos')
-    uc = models.ForeignKey(UnidadeCurricular, on_delete=models.CASCADE, related_name='projetos')
-    github_url = models.URLField(blank=True)
-    video_link = models.URLField(blank=True)
     imagem = models.ImageField(upload_to='projetos/', blank=True, null=True)
+    repositorio = models.URLField(blank=True)  # Link para o GitHub
+    tecnologias = models.ManyToManyField(Tecnologia)
+    uc = models.ForeignKey(UnidadeCurricular, on_delete=models.CASCADE, null=True, blank=True)
+    ano = models.IntegerField(default=2024)
 
     def __str__(self):
         return self.titulo
