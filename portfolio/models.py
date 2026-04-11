@@ -64,12 +64,13 @@ class Formacao(models.Model):
 
 
 class TFC(models.Model):
-    titulo = models.CharField(max_length=200)
-    autor = models.CharField(max_length=100)
-    orientador = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=255)
+    autor = models.CharField(max_length=255)
+    orientador = models.CharField(max_length=255)
     ano = models.IntegerField()
     resumo = models.TextField()
-    link_relatorio = models.URLField(blank=True) 
+    curso = models.CharField(max_length=100, blank=True) 
+    link_relatorio = models.URLField(blank=True, default='')
 
     def __str__(self):
         return self.titulo

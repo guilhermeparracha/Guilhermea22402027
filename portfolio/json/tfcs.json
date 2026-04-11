@@ -1,0 +1,10 @@
+[
+  {
+    "titulo": "Exemplo de TFC 1",
+    "autor": "Nome do Aluno",
+    "orientador": "Nome do Professor",
+    "ano": 2025,
+    "resumo": "Este é um resumo de teste.",
+    "link": "https://github.com/exemplo"
+  }
+]

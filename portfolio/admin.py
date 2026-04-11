@@ -1,11 +1,4 @@
 from django.contrib import admin
-
-# Register your models here.
-
-
-admin.site.register(Licenciatura)
-
-from django.contrib import admin
 from .models import Licenciatura, UnidadeCurricular, Tecnologia, Projeto, TFC, Formacao, Competencia, MakingOf
 
 @admin.register(Licenciatura)
@@ -16,9 +9,9 @@ class LicenciaturaAdmin(admin.ModelAdmin):
 @admin.register(UnidadeCurricular)
 class UnidadeCurricularAdmin(admin.ModelAdmin):
     list_display = ('nome', 'ano', 'semestre', 'ects')
-    list_filter = ('ano', 'semestre', 'licenciaturas')
+    list_filter = ('ano', 'semestre')
     search_fields = ('nome',)
-    filter_horizontal = ('licenciaturas',)  
+    filter_horizontal = ('licenciaturas',)
 
 @admin.register(Tecnologia)
 class TecnologiaAdmin(admin.ModelAdmin):
@@ -28,14 +21,14 @@ class TecnologiaAdmin(admin.ModelAdmin):
 @admin.register(Projeto)
 class ProjetoAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'uc')
-    list_filter = ('uc', 'tecnologias')
+    list_filter = ('uc',)
     search_fields = ('titulo', 'descricao')
     filter_horizontal = ('tecnologias',)
 
 @admin.register(TFC)
 class TFCAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'autor', 'ano', 'e_favorito')
-    list_filter = ('ano', 'e_favorito')
+    list_display = ('titulo', 'autor', 'ano')
+    list_filter = ('ano',)
     search_fields = ('titulo', 'autor')
 
 @admin.register(Formacao)

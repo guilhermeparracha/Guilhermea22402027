@@ -1,0 +1,50 @@
+[
+  {
+    "titulo": "Abordagens não supervisionadas para deteção de reviews falsas em plataformas de e-commerce",
+    "autor": "Nuno Santinhos",
+    "orientador": "Sofia Fernandes",
+    "ano": 2025,
+    "resumo": "Deteção de fraudes em e-commerce usando Ciência de Dados.",
+    "curso": "Licenciatura em Ciência de Dados"
+  },
+  {
+    "titulo": "AdvenTour",
+    "autor": "Gonçalo Neves, Lucas Botelho",
+    "orientador": "José Cascais Brás",
+    "ano": 2025,
+    "resumo": "Projeto de desenvolvimento focado em turismo e aventura.",
+    "curso": "Licenciatura em Engenharia Informática"
+  },
+  {
+    "titulo": "Aplicativo para gestão de voluntários e auxilio de associações de animais",
+    "autor": "Cátia Coelho",
+    "orientador": "Bruno Cipriano, Rodrigo Correia",
+    "ano": 2025,
+    "resumo": "Plataforma de apoio a associações de proteção animal.",
+    "curso": "Licenciatura em Informática de Gestão"
+  },
+  {
+    "titulo": "Aplicação Móvel de Audiolivros Infantis",
+    "autor": "Tomás Silva, Carlota Montalvão",
+    "orientador": "Lúcio Studer, Martim Mourão",
+    "ano": 2025,
+    "resumo": "Desenvolvido em parceria com a Associação Nacional Glaucoma Pediátrico (ANGP).",
+    "curso": "Engenharia Informática / Informática de Gestão"
+  },
+  {
+    "titulo": "Aplicação de controlo de assiduidade c/ terminal de picagem",
+    "autor": "Daniel Martins",
+    "orientador": "Rodrigo Correia",
+    "ano": 2025,
+    "resumo": "Desenvolvido em parceria com a ARPI de S. Julião do Tojal.",
+    "curso": "Licenciatura em Engenharia Informática"
+  },
+  {
+    "titulo": "Aplicação de técnicas de análise de dados para deteção de fugas e roturas em sistemas de distribuição de água",
+    "autor": "Wilson Silva",
+    "orientador": "Maria Silva",
+    "ano": 2025,
+    "resumo": "Desenvolvido em parceria com o Laboratório de Engenharia Civil.",
+    "curso": "Licenciatura em Engenharia Informática"
+  }
+]
