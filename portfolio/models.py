@@ -57,7 +57,6 @@ class Formacao(models.Model):
     data_inicio = models.DateField()
     data_fim = models.DateField(null=True, blank=True)
     descricao = models.TextField(blank=True)
-    # Ligação à Licenciatura
     licenciatura = models.ForeignKey(Licenciatura, on_delete=models.CASCADE, related_name='formacoes')
 
     def __str__(self):
@@ -70,8 +69,28 @@ class TFC(models.Model):
     orientador = models.CharField(max_length=100)
     ano = models.IntegerField()
     resumo = models.TextField()
-    link_relatorio = models.URLField(blank=True)
-    e_favorito = models.BooleanField(default=False) # Para destacar os de maior interesse
+    link_relatorio = models.URLField(blank=True) 
 
     def __str__(self):
         return self.titulo
+
+
+
+class Competencia(models.Model):
+    nome = models.CharField(max_length=50)
+    categoria = models.CharField(max_length=50, help_text="Ex: Técnica, Soft-Skill")
+    projetos = models.ManyToManyField(Projeto, related_name='competencias', blank=True)
+
+    def __str__(self):
+        return self.nome
+
+class MakingOf(models.Model):
+    titulo_etapa = models.CharField(max_length=100)
+    data = models.DateField(auto_now_add=True)
+    decisoes_tomadas = models.TextField()
+    erros_encontrados = models.TextField()
+    uso_ia = models.TextField()
+    foto_caderno = models.ImageField(upload_to='makingof/', blank=True, null=True)
+
+    def __str__(self):
+        return self.titulo_etapa
