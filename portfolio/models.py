@@ -49,3 +49,29 @@ class Projeto(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class Formacao(models.Model):
+    instituicao = models.CharField(max_length=100)
+    curso = models.CharField(max_length=100)
+    data_inicio = models.DateField()
+    data_fim = models.DateField(null=True, blank=True)
+    descricao = models.TextField(blank=True)
+    # Ligação à Licenciatura
+    licenciatura = models.ForeignKey(Licenciatura, on_delete=models.CASCADE, related_name='formacoes')
+
+    def __str__(self):
+        return f"{self.curso} ({self.instituicao})"
+
+
+class TFC(models.Model):
+    titulo = models.CharField(max_length=200)
+    autor = models.CharField(max_length=100)
+    orientador = models.CharField(max_length=100)
+    ano = models.IntegerField()
+    resumo = models.TextField()
+    link_relatorio = models.URLField(blank=True)
+    e_favorito = models.BooleanField(default=False) # Para destacar os de maior interesse
+
+    def __str__(self):
+        return self.titulo
