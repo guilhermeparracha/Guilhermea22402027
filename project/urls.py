@@ -4,7 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # <--- O segredo está aqui: .urls
+    path('admin/', admin.site.urls),  
+    path("escola/", include("curso.urls")),   
 ]
 
 # Configuração para que as imagens (Media) funcionem durante o desenvolvimento
