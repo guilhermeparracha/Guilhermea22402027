@@ -1,0 +1,13 @@
+<h2>Trabalhos Finais de Curso (TFC)</h2>
+{% for tfc in tfcs %}
+    <div style="border-bottom: 1px solid #eee; padding: 10px;">
+        <h3>{{ tfc.titulo }}</h3>
+        <p><strong>Autor:</strong> {{ tfc.autor }} | <strong>Orientador:</strong> {{ tfc.orientador }}</p>
+        <p><strong>Ano:</strong> {{ tfc.ano }}</p>
+        <p><em>{{ tfc.resumo }}</em></p>
+        {% if tfc.link_relatorio %}
+            <a href="{{ tfc.link_relatorio }}" target="_blank">Ver Relatório Completo</a>
+        {% endif %}
+    </div>
+{% endfor %}
+<a href="{% url 'portfolio:home' %}">Voltar</a>

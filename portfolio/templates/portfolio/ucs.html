@@ -1,0 +1,12 @@
+<h2>Unidades Curriculares</h2>
+{% for uc in ucs %}
+    <div>
+        <h3>{{ uc.nome }}</h3>
+        <p>Ano: {{ uc.ano }} | Semestre: {{ uc.semestre }}</p>
+        <p>Licenciaturas: 
+            {% for lic in uc.licenciaturas.all %}
+                {{ lic.nome }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+    </div>
+{% endfor %}

@@ -41,3 +41,12 @@ def apaga_projeto_view(request, projeto_id):
 
 def sobre_view(request):
     return render(request, 'portfolio/sobre.html')
+
+
+def ucs_view(request):
+    context = {'ucs': UnidadeCurricular.objects.all()}
+    return render(request, 'portfolio/ucs.html', context)
+
+def tfcs_view(request):
+    context = {'tfcs': TFC.objects.all()}
+    return render(request, 'portfolio/tfcs.html', context)
