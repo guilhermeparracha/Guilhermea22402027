@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "curso",
     "accounts",
     "artigos",
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -159,4 +161,30 @@ environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 ## definicao da base de dados psql em Neon
 DATABASES = {
     "default": env.db("DATABASE_URL")
+}
+
+## settings.py
+
+import environ
+import os
+
+# já foi feita a importação para as var. de ambiente da BD
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET'),
+}
+
+# settings.py
+
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
 }
