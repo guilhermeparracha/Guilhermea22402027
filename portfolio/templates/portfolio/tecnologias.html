@@ -1,3 +1,7 @@
+{% extends "portfolio/layout.html" %}
+
+{% block content %}
+
 <h2>Tecnologias</h2>
 {% for tecnologia in tecnologias %}
     <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
@@ -7,3 +11,5 @@
         <p>Nível de interesse: {{ tecnologia.nivel_interesse }}/5</p>
     </div>
 {% endfor %}
+
+{% endblock %}

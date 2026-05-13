@@ -1,0 +1,46 @@
+<!-- portfolio/templates/portfolio/layout.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Académico</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        nav { background: #333; padding: 10px; border-radius: 5px; }
+        nav a { color: white; margin-right: 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #3498db; }
+        header { border-bottom: 2px solid #333; margin-bottom: 20px; }
+        footer { margin-top: 50px; border-top: 1px solid #ccc; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guilherme Parracha - Portfólio</h1>
+        <nav>
+            <a href="{% url 'portfolio:home' %}">Início</a>
+            <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+            <a href="{% url 'portfolio:tecnologias' %}">Tecnologias</a>
+            <a href="{% url 'portfolio:ucs' %}">Disciplinas (UCs)</a>
+            <a href="{% url 'portfolio:sobre' %}">Sobre</a>
+            <a href="{% url 'artigos:lista' %}">Artigos</a>
+            
+            {% if user.is_authenticated %}
+                <span style="color: yellow; margin-left: 20px;">Olá, {{ user.username }}</span>
+                <a href="{% url 'accounts:logout' %}">Sair</a>
+            {% else %}
+                <a href="{% url 'accounts:login' %}" style="float: right;">Login</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Portfólio Académico Django</p>
+    </footer>
+</body>
+</html>

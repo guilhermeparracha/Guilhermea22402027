@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "festivais",
     "portfolio",
     "curso",
+    "accounts",
+    "artigos",
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # URL pública para aceder aos ficheiros
 MEDIA_URL = '/media/'
+
+
+
+# URL para onde o utilizador é enviado se tentar aceder a uma página protegida sem login
+LOGIN_URL = 'accounts:login'
+
+# Para onde o utilizador vai logo após fazer Login com sucesso
+LOGIN_REDIRECT_URL = 'portfolio:home'
+
+# Para onde o utilizador vai após fazer Logout
+LOGOUT_REDIRECT_URL = 'portfolio:home'
+
+## em settings.py
+
+import environ
+import os
+
+# inicializar environ
+env = environ.Env()
+
+# ler ficheiro .env (opcional mas recomendado)
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
+## definicao da base de dados psql em Neon
+DATABASES = {
+    "default": env.db("DATABASE_URL")
+}
